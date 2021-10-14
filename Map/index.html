@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <Script>
+        window.onload = init;
+        function init() {
+            document.getElementById("map").onmousemove = showCoords;
+        };
+        function showCoords(eventObj) {
+            var x = eventObj.pageX;
+            var y = eventObj.pageY
+            document.getElementById("coords").innerHTML = "Клад на месте " + x + " " + y;
+        };
+
+
+    </Script>
+
+</head>
+
+<body>
+    <img id="map" src=map.jpg>
+    <p id="coords">Двигай мышкой...</p>
+</body>
+
+</html>

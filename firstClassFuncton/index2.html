@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <script>
+        function addN(n) {
+            return function (x) {
+                return (n + x);
+            };
+
+        };
+
+        var summ = addN(2);
+        console.log(summ(3));
+        // console.log(add2(100));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

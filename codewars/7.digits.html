@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function explode(s) {
+            // for (let i = 0; i < s.length; i++) {
+            //     if (s[i] == 0) {
+            //         s.replace(/\/0/g, '');
+
+            //     }
+
+            // }
+
+
+            s = s.split('');
+
+            console.log(s);
+            d = [];
+
+
+            for (let i = 0; i < s.length; i++) {
+                let j = 0;
+                do {
+                    d.push(s[i])
+                    j++
+                } while (j < s[i]);
+            }
+            return (d.join(''));
+        }
+        console.log(explode("3102"));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

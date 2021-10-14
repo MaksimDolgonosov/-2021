@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var passengers = [
+            { name: "Jane Doloop", paid: true, ticket: "coach" },
+            { name: "Dr. Evel", paid: true, ticket: "firstclass" },
+            { name: "Sue Property", paid: false, ticket: "firstclass" },
+            { name: "John Funcall", paid: true, ticket: "coach" }];
+
+        function checkPassangers(passengers, testFuncton) {
+            for (let i = 0; i < passengers.length; i++) {
+                if (testFuncton(passengers[i])) {
+                    return false;
+                }
+            } return true;
+        };
+
+        function processPassengers(passengers, processFuncton) {
+            for (let i = 0; i < passengers.length; i++) {
+                processFuncton(passengers[i]);
+            };
+        };
+
+        processPassengers(passengers, printPassenger);
+
+
+        var NoFlyList = checkPassangers(passengers, checkNoFlyList)
+        if (!NoFlyList) {
+            console.log("На борту пассажир с Блэк-листа");
+        };
+
+        var NotPaid = checkPassangers(passengers, checkNotPaid)
+        if (!NotPaid) {
+            console.log("На борту пассажир с неоплаченным билетом");
+        };
+
+
+        function checkNoFlyList(passenger) {
+            if (passenger.name == "Dr. Evel") {
+                return true;
+            } return false;
+        };
+
+        function checkNotPaid(passenger) {
+            if (!passenger.paid) {
+                return true;
+            } return false;
+        };
+
+        function printPassenger(passenger) {
+            console.log(passenger.name + " " + passenger.paid)
+        };
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

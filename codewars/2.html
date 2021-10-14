@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function highAndLow(numbers) {
+            let max = -1000000000;
+            let min = 10000000000;
+            let arr = numbers.split(" ");
+            let arr2 = [];
+            for (let i = 0; i < arr.length; i++) {
+                arr2[i] = Number(arr[i])
+            }
+
+
+
+
+            for (let i = 0; i < arr2.length; i++) {
+
+                if (arr2[i] > max) {
+                    max = arr2[i];
+                }
+            }
+
+            for (let i = 0; i < arr2.length; i++) {
+                if (arr2[i] < min) {
+                    min = arr2[i];
+                }
+            }
+            return (max + " " + min);
+
+        }
+
+
+        console.log(highAndLow("-2036 -2911 -840 -2592 -3620 -3781 -3681 -1582 -2662 -3242 -3551 -3112 -1266 -3453 -3649 -1466 -2361 -1398 -3109 -3910 -2151"));
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

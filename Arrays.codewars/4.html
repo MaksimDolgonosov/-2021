@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let tickets = [25, 25, 50, 100, 25];
+        let cost = 25;
+        let sum = tickets.reduce((accum, item) => {
+            accum += item;
+            return accum;
+        })
+
+        let a = tickets.reduce((accum, item) => {
+
+            if (item == cost) {
+                accum.push(item);
+            };
+
+            if (item == 50) {
+                if (sum < (item - cost)) {
+                    return "NO. Vasya will not have enough money to give change to " + item + " dollars";
+                }
+
+                if (accum.indexOf(item - cost) < 0) {
+                    return "NO. Vasya will not have the right bills to give " + item + " dollars of change (you can't make two bills of 25 from one of 50)";
+                }
+                accum.splice(accum.indexOf((item - cost)), 1, item);
+            }
+
+            let sum50 = accum.reduce((ArrSum, it) => {
+                if (it == 50) {
+                    ArrSum++;
+                }
+                return ArrSum;
+            }, 0)
+
+            if (item == 100) {
+                if (sum < (item - cost)) {
+                    return "NO. Vasya will not have enough money to give change to " + item + " dollars";
+                }
+
+                if (accum.indexOf(50) < 0 && sum50 < 3) {
+                    return "NO. Vasya will not have the right bills to give " + item + " dollars of change (you can't make two bills of 25 from one of 50)";
+                }
+                if (accum.indexOf(50) >= 0) {
+                    accum.splice(accum.indexOf(50), 1);
+                    accum.splice(accum.indexOf(25), 1);
+                    accum.push(item);
+                }
+
+            }
+            console.log("YES")
+            return accum;
+        }, []);
+
+
+        console.log(a);
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

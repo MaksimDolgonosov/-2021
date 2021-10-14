@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+
+        function CreateStep() {
+            let count = 0;
+            return function () {
+                count += 3;
+                console.log(count);
+            }
+            console.log(count);
+        };
+
+        let step1 = CreateStep();
+        let step2 = CreateStep();
+        step1();
+        step1();
+        step1();
+        step1();
+        step2();
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

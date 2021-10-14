@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function absentVowel(x) {
+            x.split('');
+            let array = ["a", "e", "i", "o", "u"]
+            for (let i = 0; i < array.length; i++) {
+                if (x.indexOf(array[i]) === -1) {
+                    return i;
+                }
+            }
+
+
+
+        }
+
+        console.log(absentVowel("John Doe hs seven red pples under his bsket"));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

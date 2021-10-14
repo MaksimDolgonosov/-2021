@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function nicknameGenerator(name) {
+            var vowels = 'aeiou';
+
+            if (name.length < 4) {
+                return "Error: Name too short";
+            }
+            for (let i = 0; i < vowels.length; i++) {
+
+                if (name[2] == vowels[i]) {
+                    return name.slice(0, 4);
+                }
+
+            } return name.slice(0, 3);
+        }
+        console.log(nicknameGenerator("Samantha"));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

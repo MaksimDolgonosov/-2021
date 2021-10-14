@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function deepCount(a) {
+            //  return a.reduce((s,e)=>s+(Array.isArray(e)?deepCount(e):0),a.length);
+            var count = a.length;
+            countLength(a)
+            function countLength(a) {
+                for (let i = 0; i < a.length; i++) {
+                    isArr(a[i]);
+
+                }
+            }
+            function isArr(elem) {
+                if (Array.isArray(elem)) {
+                    count = count + elem.length;
+                    countLength(elem);
+                }
+            }
+
+            return count;
+        };
+        console.log(deepCount([[[[[[[[[]]]]]]]]]));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var scores = [
+      60, 50, 60, 58, 54, 54,
+      58, 50, 52, 54, 48, 69,
+      34, 55, 51, 52, 44, 51,
+      69, 64, 66, 55, 52, 61,
+      46, 31, 57, 52, 44, 18,
+      41, 53, 55, 61, 51, 44];
+
+    var costs = [
+      .25, .27, .25, .25, .25, .25,
+      .33, .31, .25, .29, .27, .22,
+      .31, .25, .25, .33, .21, .25,
+      .25, .25, .28, .25, .24, .22,
+      .20, .25, .30, .25, .24, .25,
+      .25, .25, .27, .25, .26, .29];
+
+    var HighestScore = 0;
+    var HighestSolution = [];
+
+    for (let i = 0; i < scores.length; i++) {
+      document.write("bubble soluton #" + i + " score: " + scores[i] + "<br>");
+      if (scores[i] > HighestScore) {
+        HighestScore = scores[i];
+      }
+
+    };
+
+    for (let i = 0; i < scores.length; i++) {
+
+      if (HighestScore == scores[i]) {
+        HighestSolution.push(" #" + i);
+      }
+
+    };
+    document.write("Bubbles tests: " + scores.length + "<br>");
+    document.write("Highest bubble score: " + HighestScore + "<br>");
+    document.write("Solutions with highest score:" + HighestSolution + "<br>");
+
+    function minCost(scores, costs, HighestScore) {
+      let maxResult = 100;
+      let maxEffect;
+      for (let i = 0; i < scores.length; i++) {
+        if (scores[i] == HighestScore) {
+          if (costs[i] < maxResult) {
+            maxResult = costs[i];
+            maxEffect = i;
+          }
+        }
+      }
+      return maxEffect;
+    }
+
+    document.write("Winner is solution # " + minCost(scores, costs, HighestScore));
+
+  </script>
+
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

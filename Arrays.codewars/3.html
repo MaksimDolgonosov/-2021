@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var validWord = function (dictionary, word) {
+            let min = dictionary[0].length;
+            for (let i = 1; i < dictionary.length; i++) {
+                if (dictionary[i].length < min) {
+                    min = dictionary[i].length
+                }
+            }
+
+
+            for (let i = 0; i < dictionary.length; i++) {
+                if (word.search(dictionary[i]) > 0) {
+                    word = word.slice(0, word.search(dictionary[i]));
+                    console.log(word);
+                } else if (word.search(dictionary[i]) == 0) {
+                    word = word.substring(0, word.search(dictionary[i]));
+                    console.log(word);
+                }
+
+            }
+
+
+
+
+            return false;
+        };
+
+
+        validWord(['wars', 'code', "a"], 'codewarsa');
+        // console.log('codewars'.search("code"));
+        // let a = "codewars".slice(0, 4);
+
+        // console.log(a);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var passengers = [
+            { name: "Jane Doloop", paid: true, ticket: "coach" },
+            { name: "Dr. Evel", paid: true, ticket: "firstclass" },
+            { name: "Sue Property", paid: false, ticket: "firstclass" },
+            { name: "John Funcall", paid: true, ticket: "economy" }];
+
+
+        function servePassengers(passengers) {
+            for (let i = 0; i < passengers.length; i++) {
+                serveCustomer(passengers[i]);
+            }
+
+        };
+
+
+
+        function serveCustomer(passenger) {
+            var getDrinkOrderFunction = createDrinkOrder(passenger);
+            var getLunchOrderFunction = createLunchOrder(passenger);
+            getDrinkOrderFunction();
+            getLunchOrderFunction();
+        };
+
+        function createDrinkOrder(passenger) {
+            if (passenger.ticket == "firstclass") {
+                return function () { alert("Вино или коктейль?") };
+            } else if (passenger.ticket == "economy") {
+                return function () { alert("Вода или кола или вино?") };
+            } else {
+                return function () {
+                    alert("Вода или кола?");
+
+                }
+            };
+        };
+
+        function createLunchOrder(passenger) {
+            if (passenger.ticket == "firstclass") {
+                return function () { alert("Курица или паста?") };
+            } else if (passenger.ticket == "economy") {
+                return function () { alert("Закуски или сырная тарелка?") };
+            } else {
+                return function () {
+                    alert("Орешки или сухарики?");
+                }
+            };
+        };
+
+        servePassengers(passengers);
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

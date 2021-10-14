@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sortByBit(Arr) {
+            console.log(Arr);
+            //let ArrFin = [];
+            let newArr = Arr.map(function (elem) {
+                return Number(elem).toString(2)
+
+            });
+            console.log(newArr);
+
+
+            let sum1 = newArr.reduce((accum, element) => {
+                accum.push(element.split("1").length - 1);
+
+
+                return accum;
+            }, []);
+
+            console.log(sum1);
+
+            Arr.sort((a, b) =>
+                a - b
+            );
+
+            console.log(sum1);
+        };
+
+        sortByBit([7, 6, 15, 8]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

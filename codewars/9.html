@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getParticipants(handshakes) {
+
+            var Arr = [];
+            for (let i = 1; i < 1000; i++) {
+                Arr.push(i);
+
+            }
+            console.log(Arr);
+
+
+            Arr2 = Arr.map(x => {
+                var sum = 0;
+                while (x > 0) {
+                    sum = sum + (x - 1);
+                    x--;
+                }
+                return sum;
+            });
+            console.log(Arr2);
+
+            for (let i = 0; i < Arr2.length; i++) {
+                if (handshakes == Arr2[i]) {
+                    return Arr[i];
+                }
+                if (Arr2[i] < handshakes && handshakes < Arr2[i + 1]) {
+                    return Arr[i + 1];
+                }
+            }
+
+        }
+        console.log(getParticipants(7));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
